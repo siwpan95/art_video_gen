@@ -1,0 +1,27 @@
+{
+  "name": "漩涡场 × 相位振荡网络 × 冰川",
+  "version": "1.0",
+  "grid": {
+    "width": 256,
+    "height": 192,
+    "wrap": true,
+    "initial": {
+      "type": "formula",
+      "expression": "(atan2(y-0.5, x-0.5)/(2*3.14159) + 0.5) * (1 - sqrt((x-0.5)**2+(y-0.5)**2)*1.2)"
+    }
+  },
+  "evolution": {
+    "rule": "(c + 0.06 + 0.04*sin(avg_n*10) + 0.03*sin(t*0.08)) % 1.0",
+    "variables": [
+      "c",
+      "avg_n",
+      "t"
+    ]
+  },
+  "color": {
+    "mode": "per_channel",
+    "red": "v*0.55 + 0.35*sin(v*2.5)",
+    "green": "v*0.72 + 0.2*cos(v*3.5)",
+    "blue": "v*0.9 + 0.1*sin(v*1.8)"
+  }
+}

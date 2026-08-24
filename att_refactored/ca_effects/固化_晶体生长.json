@@ -1,0 +1,33 @@
+{
+  "name": "固化_晶体生长",
+  "version": "1.0",
+  "description": "晶体生长/固化前沿模拟。双稳势 + 扩散，界面从核向外推进，产生类似雪花枝晶的分形前沿",
+  "grid": {
+    "width": 300,
+    "height": 300,
+    "wrap": false,
+    "initial": {
+      "type": "formula",
+      "expression": "1.0 if ((x-0.5)**2+(y-0.5)**2)<0.0004 else 0.0"
+    }
+  },
+  "neighborhood": {
+    "type": "moore",
+    "radius": 1
+  },
+  "evolution": {
+    "rule": "c + 0.06*(avg_n - c) + 0.15*c*(1-c)*(c-0.4) + 0.01*sin(8.0*atan2(y-0.5, x-0.5)*4)",
+    "variables": ["c", "avg_n", "x", "y"]
+  },
+  "color": {
+    "mode": "per_channel",
+    "red": "0.2 + 0.8*v",
+    "green": "0.4 + 0.6*v*v",
+    "blue": "0.8 + 0.2*v"
+  },
+  "tick": {
+    "fps": 15,
+    "steps_per_frame": 1
+  },
+  "cycle": {"steps": 800}
+}

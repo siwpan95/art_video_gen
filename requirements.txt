@@ -1,0 +1,9 @@
+# art_video_gen dependencies (auto-generated 2026-08-20)
+asteval
+librosa
+numba
+numpy
+opencv-python
+Pillow
+sounddevice
+torch

@@ -1,0 +1,29 @@
+{
+  "name": "Game_of_Life_经典",
+  "version": "1.0",
+  "grid": {
+    "width": 300,
+    "height": 200,
+    "wrap": true,
+    "initial": {
+      "type": "formula",
+      "expression": "1 if random() > 0.8 else 0"
+    }
+  },
+  "evolution": {
+    "rule": "(c==1 and (sum_n==2 or sum_n==3)) or (c==0 and sum_n==3)",
+    "variables": [
+      "c",
+      "sum_n"
+    ]
+  },
+  "color": {
+    "mode": "per_channel",
+    "red": "v",
+    "green": "v",
+    "blue": "v"
+  },
+  "cycle": {
+    "steps": 400
+  }
+}

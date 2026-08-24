@@ -1,0 +1,33 @@
+{
+  "name": "Ginzburg-Landau_螺旋混沌",
+  "version": "1.0",
+  "description": "复Ginzburg-Landau方程简化。立方非线性 + 色散项产生螺旋波、相位湍流和时空混沌",
+  "grid": {
+    "width": 256,
+    "height": 256,
+    "wrap": true,
+    "initial": {
+      "type": "formula",
+      "expression": "0.5 + 0.5*sin(3.1416*((x-0.5)**2+(y-0.5)**2)*20)"
+    }
+  },
+  "neighborhood": {
+    "type": "moore",
+    "radius": 1
+  },
+  "evolution": {
+    "rule": "c + 0.08*(avg_n - c) + 0.2*c*(1 - c) + 0.05*sin(x*30 + t*0.3)*c*(1-c)",
+    "variables": ["c", "avg_n", "x", "t"]
+  },
+  "color": {
+    "mode": "per_channel",
+    "red": "0.5 + 0.5*sin(v*12 + t*0.05)",
+    "green": "0.5 + 0.5*sin(v*12 + 2.094 + t*0.05)",
+    "blue": "0.5 + 0.5*sin(v*12 + 4.189 + t*0.05)"
+  },
+  "tick": {
+    "fps": 20,
+    "steps_per_frame": 1
+  },
+  "cycle": {"steps": 400}
+}

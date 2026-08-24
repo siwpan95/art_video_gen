@@ -1,0 +1,41 @@
+{
+  "name": "驻波_正弦干涉",
+  "version": "1.0",
+  "description": "二维驻波干涉图案。多个方向正弦波叠加产生莫尔纹和驻波节点线，随时间缓慢旋转演变",
+  "grid": {
+    "width": 300,
+    "height": 300,
+    "wrap": true,
+    "initial": {
+      "type": "formula",
+      "expression": "0.5 + 0.3*(sin(x*31.416) + sin(y*31.416) + sin((x+y)*22.214) + sin((x-y)*22.214))/4"
+    }
+  },
+  "neighborhood": {
+    "type": "moore",
+    "radius": 1
+  },
+  "evolution": {
+    "rule": "c + 0.05*(avg_n - c) + 0.02*sin(x*31.416 + t*0.05)*sin(y*31.416 + t*0.07) + 0.01*sin((x+y)*22.214 - t*0.03)*cos((x-y)*22.214 + t*0.04)",
+    "variables": [
+      "c",
+      "avg_n",
+      "x",
+      "y",
+      "t"
+    ]
+  },
+  "color": {
+    "mode": "per_channel",
+    "red": "0.3 + 0.7*sin(v*20 + t*0.02)",
+    "green": "0.3 + 0.7*sin(v*20 + 2.094 + t*0.02)",
+    "blue": "0.3 + 0.7*sin(v*20 + 4.189 + t*0.02)"
+  },
+  "tick": {
+    "fps": 20,
+    "steps_per_frame": 1
+  },
+  "cycle": {
+    "steps": 300
+  }
+}

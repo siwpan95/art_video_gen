@@ -1,0 +1,26 @@
+{
+  "name": "螺旋波 × FitzHugh–Nagumo × 熔岩",
+  "version": "1.0",
+  "grid": {
+    "width": 256,
+    "height": 192,
+    "wrap": true,
+    "initial": {
+      "type": "formula",
+      "expression": "0.5 + 0.5 * sin(atan2(y-0.5, x-0.5) * 6 + sqrt((x-0.5)**2+(y-0.5)**2) * 25)"
+    }
+  },
+  "evolution": {
+    "rule": "c + 0.07*(avg_n-c) + 0.28*c*(c-0.18)*(1-c) - 0.035*(c-0.3)",
+    "variables": [
+      "c",
+      "avg_n"
+    ]
+  },
+  "color": {
+    "mode": "per_channel",
+    "red": "v",
+    "green": "v*v*0.7",
+    "blue": "v*v*v*0.12"
+  }
+}

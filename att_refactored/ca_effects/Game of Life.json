@@ -1,0 +1,26 @@
+{
+  "name": "Game of Life",
+  "grid": {
+    "width": 300,
+    "height": 200,
+    "initial": {
+      "type": "formula",
+      "expression": "1 if random()>0.8 else 0"
+    }
+  },
+  "evolution": {
+    "rule": "(c==1 and (sum_n==2 or sum_n==3)) or (c==0 and sum_n==3)",
+    "variables": [
+      "c",
+      "sum_n"
+    ]
+  },
+  "color": {
+    "red": "v",
+    "green": "v",
+    "blue": "v"
+  },
+  "cycle": {
+    "steps": 400
+  }
+}

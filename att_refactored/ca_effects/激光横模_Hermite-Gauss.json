@@ -1,0 +1,33 @@
+{
+  "name": "激光横模_Hermite-Gauss",
+  "version": "1.0",
+  "description": "激光横模图案（Hermite-Gauss近似）。产生TEM模式的二维光斑图案，多模叠加呈现花瓣、环形等结构",
+  "grid": {
+    "width": 256,
+    "height": 256,
+    "wrap": true,
+    "initial": {
+      "type": "formula",
+      "expression": "exp(-((x-0.5)**2+(y-0.5)**2)/0.03) * (cos(x*10)*cos(y*10) + 0.3*sin(x*15)*sin(y*15))"
+    }
+  },
+  "neighborhood": {
+    "type": "moore",
+    "radius": 1
+  },
+  "evolution": {
+    "rule": "c + 0.03*(avg_n - c) + 0.2*exp(-((x-0.5)**2+(y-0.5)**2)/0.03) * sin(c*6.283 + t*0.15)*0.5",
+    "variables": ["c", "avg_n", "x", "y", "t"]
+  },
+  "color": {
+    "mode": "per_channel",
+    "red": "v*0.5 + 0.5*sin(x*20 + y*20 + t*0.05)",
+    "green": "v*0.5 + 0.5*sin(x*20 - y*20 + t*0.07 + 2.094)",
+    "blue": "v*0.8 + 0.2*sin((x+y)*20 + t*0.06 + 4.189)"
+  },
+  "tick": {
+    "fps": 18,
+    "steps_per_frame": 1
+  },
+  "cycle": {"steps": 400}
+}

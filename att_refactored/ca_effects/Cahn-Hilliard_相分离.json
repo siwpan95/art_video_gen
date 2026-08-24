@@ -1,0 +1,38 @@
+{
+  "name": "Cahn-Hilliard_相分离",
+  "version": "1.0",
+  "description": "Cahn-Hilliard方程模拟相分离过程。均匀混合液逐渐分离为两相（如油和水），产生圆形域图案",
+  "grid": {
+    "width": 256,
+    "height": 256,
+    "wrap": true,
+    "initial": {
+      "type": "formula",
+      "expression": "0.5 + 0.1*(random()-0.5)"
+    }
+  },
+  "neighborhood": {
+    "type": "moore",
+    "radius": 1
+  },
+  "evolution": {
+    "rule": "c + 0.08*(avg_n - c) + 0.05*c*(c*c - 1)",
+    "variables": [
+      "c",
+      "avg_n"
+    ]
+  },
+  "color": {
+    "mode": "per_channel",
+    "red": "1.0 - v",
+    "green": "0.2 + 0.6*abs(0.5 - v)*2",
+    "blue": "v"
+  },
+  "tick": {
+    "fps": 24,
+    "steps_per_frame": 2
+  },
+  "cycle": {
+    "steps": 400
+  }
+}
