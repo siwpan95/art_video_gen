@@ -1,5 +1,7 @@
 # ATT — 集成音视频生成器
 
+> 仓库：<https://gitee.com/siwpan/art_video_gen> ｜ 许可：MIT（见 [LICENSE](LICENSE)）
+
 元胞自动机 + 粒子系统生成随机艺术视频，程序化合成音频，ffmpeg 合并。
 
 ## 功能
