@@ -76,16 +76,20 @@ pip install numba librosa cryptography
 
 ## 运行方法
 
+> 本目录采用**平铺导入**（`from att_view import ...` / `from att_model import ...`），必须以 `att_refactored/` 作为工作目录运行。
+> 从仓库根按包名调用（`python -m att_refactored.att_main`）**不成立**：`att_viewmodel.py` 里的 `from att_model import ...` 无法解析，
+> 实测报 `ModuleNotFoundError: No module named 'att_model'`（2026-09-23 复现）。
+
 ### 方法 1：直接运行主入口
 ```bash
-cd <PATH>
+cd <仓库根>/att_refactored
 python att_main.py
 ```
 
 ### 方法 2：作为模块运行
 ```bash
-cd D:/allin
-python -m tools.art_video_gen.att_refactored.att_main
+cd <仓库根>/att_refactored
+python -m att_main
 ```
 
 ## 使用示例
