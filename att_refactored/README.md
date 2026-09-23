@@ -78,7 +78,7 @@ pip install numba librosa cryptography
 
 ### 方法 1：直接运行主入口
 ```bash
-cd D:/allin/tools/art_video_gen/att_refactored
+cd <PATH>
 python att_main.py
 ```
 
