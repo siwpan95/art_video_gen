@@ -1,5 +1,12 @@
 # ATT — 集成音视频生成器
 
+## 仓库角色定位（投资组合分级 ②）
+
+> 本仓在 siwpan 投资组合（D:/projects/repos，共 133 仓）中定级为 **② 保留**，领域 **视频/图像/特效**。
+> **角色**：创意管线。
+> **维护策略**：② 旗舰 / 枢纽仓库打磨保留，作为能力展示或收敛点；② 保留类仓库低优先维持、不主动扩张。
+> 投资组合统一分级索引：`D:/projects/repos/PORTFOLIO_TIERING.md`。
+
 > 仓库：<https://gitee.com/siwpan/art_video_gen> ｜ 许可：MIT（见 [LICENSE](LICENSE)）
 
 元胞自动机 + 粒子系统生成随机艺术视频，程序化合成音频，ffmpeg 合并。
