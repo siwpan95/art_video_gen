@@ -5,3 +5,7 @@
 build/
 dist/
 release/
+
+# 生成产物（2026-11-01 卫生债务批次 H3x39+H4x9）
+att_refactored/output/
+output/

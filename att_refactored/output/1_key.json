@@ -1,7 +1,0 @@
-{
-  "version": "1.0",
-  "cipher": "AES-256-GCM",
-  "key": "iXLHiMwqw5VOafmqKOmO6Ak0aZAop3ZNeEWMl2JPmhg=",
-  "salt": "6UPFEDCJ/s47iPG5dNw0Eg==",
-  "note": "KEEP THIS FILE SECRET \u2014 Required for decryption."
-}
